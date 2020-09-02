@@ -18,3 +18,7 @@
         fstype: "ext4"
         opts: "errors=remount-ro,usrquota,grpquota"
         state: "present"
+    - name: Initial Quotacheck
+      shell: quotacheck -ugm /
+      args:
+        warn: no
