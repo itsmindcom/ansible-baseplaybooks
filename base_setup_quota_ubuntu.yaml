@@ -5,8 +5,8 @@
       apt: update_cache=yes upgrade=dist
     - name: Install Quota apt Package
       apt: name=quota state=latest
-    - name: Install linux-image-extra-virtual which is required for kernel quota support
-      apt: name=linux-image-extra-virtual state=latest
+#    - name: Install linux-image-extra-virtual which is required for kernel quota support
+#      apt: name="linux-image-extra-virtual" state=latest
   - name: Modify mount-options for /
     mount:
       path: "/"
