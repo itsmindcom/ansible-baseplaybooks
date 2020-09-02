@@ -11,10 +11,10 @@
       apt: 
         name: linux-image-extra-virtual 
         state: latest
-  - name: Modify mount-options for /
-    mount:
-      path: "/"
-      src: "UUID={{ ansible_mounts | json_query('[?mount == `/`] | [0].uuid') }}"
-      fstype: "ext4"
-      opts: "errors=remount-ro,usrquota,grpquota"
-      state: "present"
+    - name: Modify mount-options for /
+      mount:
+        path: "/"
+        src: "UUID={{ ansible_mounts | json_query('[?mount == `/`] | [0].uuid') }}"
+        fstype: "ext4"
+        opts: "errors=remount-ro,usrquota,grpquota"
+        state: "present"
